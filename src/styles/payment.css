@@ -305,6 +305,8 @@ button {
   cursor: pointer;
   margin-top: 50px;
   transform: 400ms ease-out;
+  position: relative;
+  left: 5%;
 }
 
 button:disabled,
