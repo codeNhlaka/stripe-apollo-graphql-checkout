@@ -8,40 +8,8 @@ import { Success } from "../components/success.component";
 function ProductDescription(){
     const data: AppContextInterface | null = useContext(PaymentCtx);
     const [productAdded, setAddProduct] = useState<boolean>(false);
-    const frame = useRef<HTMLDivElement | null>(null);
 
-    function handleLeave(){
-        if(frame.current){
-            const element = frame.current;
 
-            element.setAttribute(
-                "style",
-                `cursor: default;`
-            )
-        }
-    }
-
-    function handleEnter(e: React.MouseEvent<HTMLDivElement, MouseEvent>){
-        if(frame.current){
-            const element = frame.current;
-            const clientX = e.clientX,
-            clientY = e.clientY;
-
-            // element.setAttribute(
-            //     "style",
-            //     `cursor: move; `
-            // )
-
-        
-        }
-    }
-
-    function handleDrag(e: React.DragEvent<HTMLDivElement>){
-
-        const clientX = e.clientX;
-        const clientY = e.clientY;
-
-    }
 
 
     function addProduct(){
@@ -55,11 +23,10 @@ function ProductDescription(){
                 <h1>Erbology Hemp Seed</h1>
                 <p className="product-price">{productAdded ? "$40.00" : "$29.00+"}</p>
             </div>
-            <div className="product-images">
-                <div ref={frame} className="frame" onDrag={e => handleDrag(e)} onMouseEnter={e => handleEnter(e)} onMouseLeave={handleLeave}>
+            <div className="product-images slider">
+                <div className="frame inner-slider">
                     <div className="product-image"></div>
-                    <div className="product-image"></div>
-                    <div className="product-image"></div>
+
                 </div>
             </div>
             <div className="product-about">
