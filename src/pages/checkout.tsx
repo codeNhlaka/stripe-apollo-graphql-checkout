@@ -9,9 +9,6 @@ function ProductDescription(){
     const data: AppContextInterface | null = useContext(PaymentCtx);
     const [productAdded, setAddProduct] = useState<boolean>(false);
 
-
-
-
     function addProduct(){
         data?.includeProduct(!productAdded);
         return setAddProduct(!productAdded);

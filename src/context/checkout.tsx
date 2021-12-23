@@ -15,7 +15,7 @@ export interface AppContextInterface {
 
 const PaymentCtx = createContext<AppContextInterface | null>(null);
 
-const PaymentProvider = ({ children }: any) => {
+const PaymentProvider = ({ children }: Props) => {
     const [productIncluded, setProductIncluded] = useState<boolean>(false);
     const [amount, setAmount] = useState<string>("$29.00+");
 
